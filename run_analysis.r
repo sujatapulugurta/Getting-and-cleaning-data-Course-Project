@@ -14,9 +14,7 @@ features[,2] <- as.character(features[,2])
 #Extract the mean and standard deviation for each measurement
 extract_features <- grep(".*mean.*|.*std.*", features[,2])
 extract_features.names <- features[extract_features,2]
-extract_features.names = gsub('-mean', 'Mean', extract_features.names)
-extract_features.names = gsub('-std', 'Std', extract_features.names)
-extract_features.names <- gsub('[-()]', '', extract_features.names)
+
 
 #Load the datasets X and Y (test and train)
 trainX <- read.table("UCI HAR Dataset/train/X_train.txt")[extract_features]
